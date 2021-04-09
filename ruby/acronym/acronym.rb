@@ -11,15 +11,15 @@ class Acronym
 
   def self.abbreviate(sentence)
     
-    sentence = sentence.gsub(/[^a-z0-9\s]/i, "")
-    
-    each_word = sentence.split
+    sentence = sentence.split(/[^a-zA-Z0-9]$/, "")
 
-    each_word.each do |a_word|
+    @acronym = String.new
+
+    sentence.each do |a_word|
         @acronym << a_word[0]
     end
     
-    return @acronym
+    return @acronym.upcase
 
   end
 end
