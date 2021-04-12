@@ -7,29 +7,30 @@ To get started with TDD, see the `README.md` file in your
 =end
 
 class HighScores
-    attr_reader :scores
-    def initialize(scores)
-      @scores = scores
-    end
-  
-    def scores
-        @scores
-    end        
+  attr_reader :scores
 
-    def latest
-        @scores.last
-    end
-    
-    def personal_best
-        @scores.max
-    end
-    
-    def personal_top_three
-        maxs = @scores.max(3)
-        maxs.sort.reverse
-    end
+  def initialize(scores)
+    @scores = scores
+  end
 
-    def latest_is_personal_best?
-        @scores.max == @scores.last
-    end
+  def scores
+    @scores
+  end
+
+  def latest
+    @scores.last
+  end
+
+  def personal_best
+    @scores.max
+  end
+
+  def personal_top_three
+    maxs = @scores.max(3)
+    maxs.sort.reverse
+  end
+
+  def latest_is_personal_best?
+    @scores.max == @scores.last
+  end
 end
