@@ -12,6 +12,7 @@ class Acronym
   def self.abbreviate(sentence)
 
     sentence = sentence.split(/\W/)
+    #To eliminate double spaces
     sentence = sentence.reject { |c| c.empty? }
 
     @acronym = String.new
