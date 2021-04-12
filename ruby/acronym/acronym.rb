@@ -10,8 +10,9 @@ To get started with TDD, see the `README.md` file in your
 class Acronym
 
   def self.abbreviate(sentence)
-    
-    sentence = sentence.split(/[^a-zA-Z0-9]$/, "")
+
+    sentence = sentence.split(/\W/)
+    sentence = sentence.reject { |c| c.empty? }
 
     @acronym = String.new
 
